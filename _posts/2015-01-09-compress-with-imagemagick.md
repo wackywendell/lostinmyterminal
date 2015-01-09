@@ -2,7 +2,7 @@
 layout: post
 title:  "Compressing EPS files with ImageMagick"
 date:   2015-01-09 11:00:00
-categories: image compression imagemagick convert shell
+categories: shell
 ---
 
 Sometimes I find I have a `.eps` file that is taking up 20 Mb of space despite being only 200x200 or something. Here's a command to enable compression:
