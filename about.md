@@ -4,8 +4,11 @@ title: About
 permalink: /about/
 ---
 
-This is the base Jekyll theme. You can find out more info about customizing your Jekyll theme, as well as basic Jekyll usage documentation at [jekyllrb.com](http://jekyllrb.com/)
+# About this Blog
 
-You can find the source code for the Jekyll new theme at: [github.com/jglovier/jekyll-new](https://github.com/jglovier/jekyll-new)
+Like many in the software community, I routinely come across simple things that I either frequently forget how to do or that even with a bit of searching take a while to compose a full answer. This blog exists to help me remember these in the future, and hopefully to help any other wayward souls searching for similar answers.
 
-You can find the source code for Jekyll at [github.com/jekyll/jekyll](https://github.com/jekyll/jekyll)
+# About Me
+
+I am a computational physicist at Yale University, studying a range of systems from the fields of biophysics to granular materials.
+
