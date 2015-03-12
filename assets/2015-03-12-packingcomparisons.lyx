@@ -1,0 +1,457 @@
+#LyX 2.1 created this file. For more info see http://www.lyx.org/
+\lyxformat 474
+\begin_document
+\begin_header
+\textclass article
+\use_default_options true
+\maintain_unincluded_children false
+\language english
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman default
+\font_sans default
+\font_typewriter default
+\font_math auto
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100
+\font_tt_scale 100
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\use_hyperref false
+\papersize default
+\use_geometry false
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 1
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\quotes_language english
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Section
+Infinite Boundaries
+\end_layout
+
+\begin_layout Standard
+We start with
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+d^{2}=\sum_{\left\langle i,j\right\rangle }\left(\vec{r}_{ij}-\vec{s}_{ij}\right)^{2}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Where 
+\begin_inset Formula $\vec{r}_{ij}$
+\end_inset
+
+ is the distance between particles 
+\begin_inset Formula $i$
+\end_inset
+
+ and 
+\begin_inset Formula $j$
+\end_inset
+
+ in packing 1, and 
+\begin_inset Formula $\vec{s}_{ij}$
+\end_inset
+
+ is the particle distance between particles 
+\begin_inset Formula $i$
+\end_inset
+
+ and 
+\begin_inset Formula $j$
+\end_inset
+
+ in packing 2.
+\end_layout
+
+\begin_layout Standard
+Then
+\begin_inset Formula 
+\begin{eqnarray*}
+d^{2} & = & \frac{1}{2}\sum_{i=1}^{N}\sum_{j=1}^{N}\left(\vec{r}_{ij}-\vec{s}_{ij}\right)^{2}\\
+ & = & \frac{1}{2}\sum_{i=1}^{N}\sum_{j=1}^{N}\left(\vec{r}_{i}-\vec{r}_{j}-\vec{s}_{i}+\vec{s}_{j}\right)^{2}\\
+ & = & \frac{1}{2}\sum_{i=1}^{N}\sum_{j=1}^{N}\left(\left(\vec{r}_{i}-\vec{s}_{i}\right)-\left(\vec{r}_{j}-\vec{s}_{j}\right)\right)^{2}\\
+ & \equiv & \frac{1}{2}\sum_{i=1}^{N}\sum_{j=1}^{N}\left(\vec{\delta}_{i}-\vec{\delta}_{j}\right)^{2}\\
+ & = & \frac{N}{2}\sum_{i=1}^{N}\vec{\delta}_{i}^{2}+\frac{N}{2}\sum_{j=1}^{N}\vec{\delta}_{j}^{2}+\sum_{i=1}^{N}\vec{\delta}_{i}\cdot\sum_{j=1}^{N}\vec{\delta}_{j}\\
+ & = & N\sum_{i=1}^{N}\vec{\delta}_{i}^{2}+\left(\sum_{i=1}^{N}\vec{r}_{i}-\sum_{i=1}^{N}\vec{s}_{i}\right)\cdot\left(\sum_{j=1}^{N}\vec{r}_{j}-\sum_{j=1}^{N}\vec{s}_{j}\right)
+\end{eqnarray*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Where 
+\begin_inset Formula $\vec{\delta}_{i}$
+\end_inset
+
+ and 
+\begin_inset Formula $\vec{\delta}_{j}$
+\end_inset
+
+ are defined as 
+\begin_inset Formula $\left(\vec{r}_{i}-\vec{s}_{i}\right),\left(\vec{r}_{j}-\vec{s}_{j}\right)$
+\end_inset
+
+ to make that work.
+\end_layout
+
+\begin_layout Standard
+Now let's imagine that I've chosen the origin of 
+\begin_inset Formula $\vec{r}_{i}$
+\end_inset
+
+ so that 
+\begin_inset Formula $\sum\vec{r}_{i}=0$
+\end_inset
+
+, and I have chosen the origin 
+\begin_inset Formula $\vec{\Delta}_{s}$
+\end_inset
+
+ of 
+\begin_inset Formula $\vec{s}_{i}$
+\end_inset
+
+ so that they minimize 
+\begin_inset Formula $\sum_{i}\left(\vec{r}_{i}-\vec{s}_{i}\right)^{2}$
+\end_inset
+
+.
+ The derivative of 
+\begin_inset Formula $\sum_{i}\left(\vec{r}_{i}-\vec{s}_{i}\right)^{2}$
+\end_inset
+
+ with respect to that origin is therefore 0, so
+\begin_inset Formula 
+\begin{align*}
+\vec{\nabla}_{\vec{\Delta}_{s}}\sum_{i}\left(\vec{r}_{i}-\vec{s}_{i}\right)^{2} & =0\\
+\vec{\nabla}_{\vec{\Delta}_{s}}\sum_{i}\left(\vec{r}_{i}-\left(\vec{s}_{i}^{\prime}-\vec{\Delta}_{s}\right)\right)^{2} & =0\\
+\vec{\nabla}_{\vec{\Delta}_{s}}\sum_{i}\left[\left(\vec{r}_{i}-\vec{s}_{i}^{\prime}\right)^{2}+2\left(\vec{r}_{i}-\vec{s}_{i}^{\prime}\right)\cdot\vec{\Delta}_{s}+\vec{\Delta}_{s}^{2}\right] & =0\\
+\sum_{i}\left[2\left(\vec{r}_{i}-\vec{s}_{i}^{\prime}\right)+2\vec{\Delta}_{s}\right] & =0\\
+\vec{\Delta}_{s} & =-\frac{1}{N}\sum_{i}\left(\vec{r}_{i}-\vec{s}_{i}^{\prime}\right)\\
+ & =\frac{1}{N}\sum_{i}\vec{s}_{i}^{\prime}
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+So therefore if 
+\begin_inset Formula $\vec{s}_{i}$
+\end_inset
+
+ are the coordinates with the new origin 
+\begin_inset Formula $\vec{\Delta}_{s}$
+\end_inset
+
+, then 
+\begin_inset Formula $\vec{s}_{i}=\vec{s}_{i}^{\prime}-\vec{\Delta}_{s}$
+\end_inset
+
+, and 
+\begin_inset Formula $\sum_{i}\vec{s}_{i}=\left(\sum_{i}\vec{s}_{i}^{\prime}\right)-N\vec{\Delta}_{s}=0$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+This choice yields 
+\begin_inset Formula $\sum_{i}\vec{s}_{i}=0$
+\end_inset
+
+, which then means
+\begin_inset Formula 
+\begin{eqnarray*}
+d^{2} & = & N\sum_{i=1}^{N}\vec{\delta}_{i}^{2}\\
+\frac{d^{2}}{N} & = & \sum_{i=1}^{N}\left(\vec{r}_{i}-\vec{s}_{i}\right)^{2}
+\end{eqnarray*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Periodic Boundaries
+\end_layout
+
+\begin_layout Paragraph
+Problem.
+\end_layout
+
+\begin_layout Standard
+I expanded 
+\begin_inset Formula $\vec{r}_{ij}=\vec{r}_{i}-\vec{r}_{j}$
+\end_inset
+
+, and I can't choose an origin so that 
+\begin_inset Formula $\vec{r}_{ij}$
+\end_inset
+
+ is always the minimal periodic distance vector.
+ 
+\end_layout
+
+\begin_layout Paragraph
+Fix.
+\end_layout
+
+\begin_layout Standard
+We include an 
+\begin_inset Formula $L_{ij}$
+\end_inset
+
+, 
+\begin_inset Formula $M_{ij}$
+\end_inset
+
+, and 
+\begin_inset Formula $N_{ij}$
+\end_inset
+
+ term, where 
+\begin_inset Formula $\vec{L}_{ij},\vec{M}_{ij},\vec{N}_{ij}$
+\end_inset
+
+ are vectors like 
+\begin_inset Formula $\left(n_{1}L,n_{2}L\right)$
+\end_inset
+
+.
+ If we work backwards, starting with no assumptions about which translation
+ or periodic image we are taking:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{eqnarray}
+d^{2} & = & \frac{1}{2}\sum_{i=1}^{N}\sum_{j=1}^{N}\left(\vec{r}_{ij}-\vec{s}_{ij}-\vec{N}_{ij}\right)^{2}\label{eq:firstdsq}\\
+ & = & \frac{1}{2}\sum_{i=1}^{N}\sum_{j=1}^{N}\left(\vec{r}_{i}-\vec{r}_{j}-\vec{L}_{ij}+\vec{s}_{i}-\vec{s}_{j}-\vec{M}_{ij}-\vec{N}_{ij}\right)^{2}\nonumber \\
+ & = & \frac{1}{2}\sum_{i=1}^{N}\sum_{j=1}^{N}\left(\left(\vec{r}_{i}-\vec{s}_{i}\right)-\left(\vec{r}_{j}-\vec{s}_{j}\right)-\left(\vec{L}_{ij}-\vec{M}_{ij}-\vec{N}_{ij}\right)\right)^{2}\nonumber \\
+ & \equiv & \frac{1}{2}\sum_{i=1}^{N}\sum_{j=1}^{N}\left(\vec{\delta}_{i}-\vec{\delta}_{j}-\vec{\Delta}_{ij}\right)^{2}\nonumber \\
+ & = & \frac{N}{2}\sum_{i=1}^{N}\vec{\delta}_{i}^{2}+\frac{N}{2}\sum_{j=1}^{N}\vec{\delta}_{j}^{2}+\sum_{i=1}^{N}\vec{\delta}_{i}\cdot\sum_{j=1}^{N}\vec{\delta}_{j}-\sum_{i=1}^{N}\vec{\delta}_{i}\cdot\sum_{j=1}^{N}\vec{\Delta}_{ij}-\sum_{j=1}^{N}\vec{\delta}_{j}\cdot\sum_{i=1}^{N}\vec{\Delta}_{ij}+\sum_{i=1}^{N}\sum_{j=1}^{N}\vec{\Delta}_{ij}^{2}\nonumber \\
+ & = & N\sum_{i=1}^{N}\vec{\delta}_{i}^{2}+\left(\sum_{i=1}^{N}\left(\vec{r}_{i}-\vec{s}_{i}\right)\right)\cdot\left(\sum_{j=1}^{N}\left(\vec{r}_{j}-\vec{s}_{j}\right)\right)-2\left(\sum_{i=1}^{N}\left(\vec{r}_{i}-\vec{s}_{i}\right)\right)\cdot\sum_{j=1}^{N}\vec{\Delta}_{ij}+\sum_{i=1}^{N}\sum_{j=1}^{N}\vec{\Delta}_{ij}^{2}\nonumber 
+\end{eqnarray}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Now if we make the same choice of origins as above, we get
+\begin_inset Formula 
+\begin{equation}
+d^{2}=N\sum_{i=1}^{N}\left(\vec{r}_{i}-\vec{s}_{i}\right)^{2}+\sum_{i=1}^{N}\sum_{j=1}^{N}\vec{\Delta}_{ij}^{2}\label{eq:seconddsq}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Where 
+\begin_inset Formula $\vec{\Delta}_{ij}=\vec{L}_{ij}-\vec{M}_{ij}-\vec{N}_{ij}$
+\end_inset
+
+, and 
+\begin_inset Formula $\vec{L}_{ij}$
+\end_inset
+
+ are vectors of box-lengths that minimize 
+\begin_inset Formula $\left(\vec{r}_{i}-\vec{r}_{j}-\vec{L}_{ij}\right)^{2}$
+\end_inset
+
+, 
+\begin_inset Formula $\vec{M}_{ij}$
+\end_inset
+
+ minimizes 
+\begin_inset Formula $\left(\vec{s}_{i}-\vec{s}_{j}-\vec{M}_{ij}\right)^{2}$
+\end_inset
+
+, and 
+\begin_inset Formula $\vec{N}_{ij}$
+\end_inset
+
+ minimizes 
+\begin_inset Formula $\left(\vec{r}_{ij}-\vec{s}_{ij}-\vec{N}_{ij}\right)^{2}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Now we can choose which mirror image of 
+\begin_inset Formula $\vec{r}_{i}$
+\end_inset
+
+ and 
+\begin_inset Formula $\vec{s}_{i}$
+\end_inset
+
+ we want, which translation of 
+\begin_inset Formula $\vec{r}_{i}$
+\end_inset
+
+ and/or 
+\begin_inset Formula $\vec{s}_{i}$
+\end_inset
+
+ we want, and also choose each 
+\begin_inset Formula $\vec{N}_{ij}$
+\end_inset
+
+ as we wish, as long as the 
+\begin_inset Formula $\vec{N}_{ij}$
+\end_inset
+
+ coordinates are box-length.
+\end_layout
+
+\begin_layout Standard
+If we make these choices so as to minimize 
+\begin_inset Formula $d^{2}$
+\end_inset
+
+, then clearly for equation 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:seconddsq"
+
+\end_inset
+
+ we get the minimal distance squared between the two sets.
+ For equation 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:firstdsq"
+
+\end_inset
+
+, then clearly the choice that minimizes 
+\begin_inset Formula $d^{2}$
+\end_inset
+
+ is one in which 
+\begin_inset Formula $\left(\vec{r}_{ij}-\vec{s}_{ij}-\vec{\Delta}_{ij}\right)$
+\end_inset
+
+ is as short as possible, e.g., the box-wrapped shortest distance vector from
+ 
+\begin_inset Formula $\vec{r}_{ij}$
+\end_inset
+
+ to 
+\begin_inset Formula $\vec{s}_{ij}$
+\end_inset
+
+.
+ These two equations are equivalent, so the choice to minimize Eq.
+ 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:firstdsq"
+
+\end_inset
+
+ is the same as the choice to minimize Eq.
+ 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:seconddsq"
+
+\end_inset
+
+.
+ Therefore, if we simply calculate 
+\begin_inset Formula $d^{2}=\frac{1}{2}\sum_{i=1}^{N}\sum_{j=1}^{N}\left(\vec{r}_{ij}\ominus\vec{s}_{ij}\right)^{2}$
+\end_inset
+
+ (where 
+\begin_inset Formula $\vec{r}\ominus\vec{s}$
+\end_inset
+
+ is the box-wrapped distance vector between them), we have the minimal value
+ of 
+\begin_inset Formula $d^{2}$
+\end_inset
+
+:
+\begin_inset Formula 
+\[
+d^{2}=\frac{1}{N}\sum_{\left\langle i,j\right\rangle }\left(\vec{r}_{ij}\ominus\vec{s}_{ij}\right)^{2}=\min_{\vec{\delta}}\sum_{i=1}^{N}\left(\vec{r}_{i}\ominus\left(\vec{s}_{i}-\vec{\delta}\right)\right)^{2}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Note that we still need to try all 8 rotoflips, as 
+\begin_inset Formula $\vec{r}_{ij}$
+\end_inset
+
+ depends on those.
+\end_layout
+
+\end_body
+\end_document
