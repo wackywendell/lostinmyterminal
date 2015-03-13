@@ -1,9 +1,8 @@
 ---
 layout: post
 title: Sphinx Documentation
-published: false
 date:   2015-03-09 13:30:00
-categories: []
+categories: docs
 ---
 
 # Using Sphinx
