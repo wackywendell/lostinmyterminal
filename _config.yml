@@ -2,10 +2,10 @@
 title: Lost in my Terminal
 email: wendellspam@gmail.com
 description: > # this means to ignore newlines until "baseurl:"
-  All the things I slowly discovered while trying to get things done at a Linux or Mac
+  All the things I slowly discovered while trying to get things done at a BASH or ZSH
   terminal.
 baseurl: "" # the subpath of your site, e.g. /blog/
-url: "http://wackywendell.github.io" # the base hostname & protocol for your site
+url: "http://blog.lostinmy.com" # the base hostname & protocol for your site
 #twitter_username: jekyllrb
 github_username:  wackywendell
 
