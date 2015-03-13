@@ -5,11 +5,9 @@ date:   2015-03-09 13:30:00
 categories: docs
 ---
 
-# Using Sphinx
-
 ### Why?
 
-Sphinx is a great tool for documenting Python, but its remarkably difficult to get started with, and (hypocritically?) badly documented.
+Sphinx is a great tool for documenting Python, but its remarkably difficult to get started with, and (oddly enough) hard to find a good beginner's tutorial for.
 
 ## Getting Started
 
