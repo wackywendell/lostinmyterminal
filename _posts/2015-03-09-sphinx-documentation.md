@@ -19,13 +19,11 @@ Run `sphinx-quickstart`, which will start you through the process, and interacti
 
 I like to put docs in a `docs` folder, which is then where `sphinx-quickstart` will create a configuration file named `conf.py` and a `Makefile`. Then I like to have something like the following:
 
-```
-{package-folder}
-|- README.rst
-|- docs
-   |- conf.py
-   |- index.rst
-```
+    {package-folder}
+    |- README.rst
+    |- docs
+       |- conf.py
+       |- index.rst
 
 ### Readme file: `README.rst`
 
@@ -39,7 +37,10 @@ It should have a few sections:
 
 ### Index file: `docs/index.rst`
 
-```reStructuredText
+This is the "welcome page". It has two parts: the introduction (sourced from `README.rst`), and the
+Table of Contents. Here is source for it:
+
+{% highlight reStructuredText %}
 .. include:: ../README.rst
 
 Full Contents
@@ -59,14 +60,13 @@ Indices and tables
 ******************
 
 * :ref:`genindex`
-
-```
+{% endhighlight %}
 
 This will include the `README` from above, and add links to `docs/example-usage.rst` (make that yourself) and `docs/api.rst` (see below).
 
 ### API file: `docs/api.rst`
 
-```reStructuredText
+{% highlight reStructuredText %}
 Reference
 *********
 
@@ -74,19 +74,20 @@ Reference
     :members:
     :undoc-members:
 
+# Include class `spack.Packing`, which is imported into the main package
 .. autoclass:: spack.Packing
     :members:
     :undoc-members:
-```
+{% endhighlight %}
 
 This will tell Sphinx to auto-generate documentation from the module.
 
 ## Generating documentation
 
-```bash
+{% highlight bash %}
 cd ${PACKAGE_DIR}/docs
 make html
-```
+{% endhighlight %}
 
 Or for more options, `make help`.
 
@@ -96,4 +97,4 @@ You can also then use [Read the Docs](https://readthedocs.org) to host documenta
 
 ## Example
 
-This was based on `https://github.com/wackywendell/spack`.
+This was based on [spack](https://github.com/wackywendell/spack).
