@@ -13,7 +13,10 @@ Imagine we have generated two sets of points, like the following:
 
 ![Packing-Example]({{ site.baseurl }}/assets/2015-03-12-packing-example.svg)
 
-Now we want some pairing to compare the two, something like this:
+Now we want some pairing of points on the left with points on the right, so that they "match up".
+More specifically, we want a pairing that minimizes the total distance between paired points.
+
+#### Table Form
 
 |  number in A  |→|  number in B  |
 |:-------------:|-|:-------------:|
@@ -23,7 +26,7 @@ Now we want some pairing to compare the two, something like this:
 |       4       |→|       1       |
 |       5       |→|       3       |
 
-### As an Image
+#### Image Form
 
 ![Packing-Example]({{ site.baseurl }}/assets/2015-03-12-packing-example-mapping.svg)
 
@@ -42,16 +45,18 @@ Now suppose we have two sets of points, $\vec r_i$ and $\vec s_i$, with $1 \le i
 We now want to find the *ordering tuple* $T$ that minimizes
 
 $$
-d^2 = \sum_{i=1}^N \left| \vec{r}_i - \vec{s}_{T_i} \right|
+d^2 = \sum_{i=1}^N \left| \vec{r}_i - \vec{s}_{T_i} \right|^2
 $$
+
+where for each $i$, we have a location $$\vec{r}_i$$ and a "pairing" numbered $$T_i$$ at a location $$\vec{s}_{T_i}$$.
 
 ## The Solution
 
-### Step 1: Represent a Solution
+### Step 1: What does a solution even look like?
 
 A solution is an *ordering tuple*, which in code can just be a list. In [my
-code](https://github.com/wackywendell/parm/blob/master/src/constraints.hpp#L418-L444), I just use a
-wrapper around `vec<uint>`, with a distance. Here is a simpler version of it:
+code](https://github.com/wackywendell/parm/blob/06e9eef63cf2f5cbfbbf005fdbcd18ebddc44a95/src/constraints.hpp#L418-L444),
+I just use a wrapper around `vec<uint>`, with a distance. Here is a simpler version of it:
 
 {% highlight c++ %}
 class Solution {
@@ -152,11 +157,39 @@ d^{2} & =\sum_{i=1}^{N}\left(\vec{r}_{i}-\vec{s}_{i}\right)^{2}\\
 $$ -->
 
 $$
-d^{2} =\frac{1}{N}\sum_{\left\langle i,j\right\rangle }\left(\vec{r}_{ij} \ominus \vec{s}_{ij}\right)^{2}
+d^{2} =\frac{1}{N}\sum_{\left\langle i,j\right\rangle }\left(\vec{r}_{ij} \ominus_\vec{L} \vec{s}_{ij}\right)^{2}
 $$
 
-where $\ominus$ means "shortest distance given periodic boundary conditions". Proving that this
-$d^2$ is equivalent to the previous one is well outside the scope of this post, but for anyone
-interested, see [here]({{ site.baseurl }}/assets/2015-03-12-packingcomparisons.pdf), or the original
-[LyX file]({{ site.baseurl }}/assets/2015-03-12-packingcomparisons.lyx).
+where $\ominus_\vec{L}$ means "shortest distance given periodic boundary conditions in a box of
+shape $\vec{L}$". In practice, this is defined like so:
 
+{% highlight c++ %}
+for(i=0; i<NUMBER_OF_DIMENSIONS; ++i){
+    float dxi = r[i] - s[i];
+    ominused[i] = dxi - remainder(dxi, L[i]);
+}
+{% endhighlight %}
+
+Proving that the $d^2$ defined here for the periodic boundary conditions is equivalent to the
+previous one is well outside the scope of this post, but for anyone interested, see
+[here]({{site.baseurl}}/assets/2015-03-12-packingcomparisons.pdf), or the original [LyX
+file]({{site.baseurl}}/assets/2015-03-12-packingcomparisons.lyx).
+
+### Rotations
+
+Now imagine that however you are generating these sets, sometimes they appear as rotated versions of
+each other, and possibly even a mirror.
+
+This is also fairly simple to handle:
+
+ - Include in the `Solution` class a marker representing a *rotation*; for 2D, this only means
+adding an `unsigned int` in the range 0--3 for rotations, or 0--8 for rotations and flips.
+ 
+ - Include some code that handles the rotations while calculating the distances squared.
+ 
+ - When you initialize the queue, include an empty pairing *for each rotation and flip*. That way,
+each rotation and flip is already covered, and "expanding" only need add new points. Since an
+"expansion" doesn't have to ever rotate, the distance are still monotonically increasing.
+
+I have code that handles this
+[here](https://github.com/wackywendell/parm/blob/06e9eef63cf2f5cbfbbf005fdbcd18ebddc44a95/src/constraints.hpp#L518-L601).
