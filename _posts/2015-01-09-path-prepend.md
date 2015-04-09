@@ -2,7 +2,7 @@
 layout: post
 title:  "Appending and Prepending to the PATH Variable"
 date:   2015-01-09 12:00:00
-categories: shell bashrc PATH
+categories: shell
 ---
 
 I often want to add paths to my `$PATH` variable.
