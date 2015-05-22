@@ -5,8 +5,6 @@ date:   2015-04-09 18:00:00
 categories: physics
 ---
 
-# Subtraction and Periodic Boundary Conditions
-
 If you have two points, and periodic boundary conditions, and you want to know the closest distance vector between them, that's easy to write in python:
 
 {% highlight python %}

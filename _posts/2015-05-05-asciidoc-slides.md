@@ -1,11 +1,9 @@
 ---
 layout: post
-title: asciidoc slides
+title: Making Slides with asciidoc
 date:   2015-05-05 12:00:00
 categories: []
 ---
-
-# Making Slides with `asciidoc`
 
 ## Step 1: Installation
 

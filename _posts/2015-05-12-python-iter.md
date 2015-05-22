@@ -5,8 +5,6 @@ date:   2015-05-12 09:00:00
 categories: python
 ---
 
-# Making an Iterable in Python
-
 How do you make a new class work in a for loop?
 
 More specifically:

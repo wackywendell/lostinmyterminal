@@ -5,8 +5,6 @@ date:   2015-03-12 13:30:00
 categories: physics
 ---
 
-# Comparing Packings
-
 ## The Problem
 
 Imagine we have generated two sets of points, like the following:
