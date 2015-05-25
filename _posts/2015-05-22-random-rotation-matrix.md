@@ -72,7 +72,7 @@ def rand_rotation_matrix(deflection=1.0):
     # the reflected points will be uniform on the sphere.  Note that V
     # has length sqrt(2) to eliminate the 2 in the Householder matrix.
     
-    r  = np.sqrt(z)
+    r = np.sqrt(z)
     Vx, Vy, Vz = V = (
         np.sin(phi) * r,
         np.cos(phi) * r,
@@ -87,10 +87,10 @@ def rand_rotation_matrix(deflection=1.0):
     ct = cos(theta)
     Sx = Vx * ct - Vy * st
     Sy = Vx * st + Vy * ct
-
+    
     # Construct the rotation matrix  ( V Transpose(V) - I ) R, which
     # is equivalent to V S - R.
-
+    
     M = np.array((
             (
                 Vx * Sx - ct,
