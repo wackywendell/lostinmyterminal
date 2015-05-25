@@ -1,0 +1,19 @@
+{
+  "name": "lostinmyterminal.com",
+  "version": "1.0.0",
+  "homepage": "https://blog.lostinmyterminal.com",
+  "authors": [
+    "Wendell Smith <wackywendell@gmail.com>"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "foundation": "~5.5.2"
+  }
+}
