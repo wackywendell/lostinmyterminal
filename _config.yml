@@ -14,3 +14,4 @@ github_username:  wackywendell
 markdown: kramdown
 # Use Pygments. Default for Github.
 highlighter: pygments
+exclude: ['bower_components']
