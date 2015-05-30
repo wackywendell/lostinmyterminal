@@ -46,3 +46,10 @@ There are a few posts I think are especially useful:
   * [Using Sphinx for documentation]({% post_url 2015-03-09-sphinx-documentation %})
 
 Or if you're in the mood for an interesting algorithm:
+
+  * [Using Sphinx for documentation]({% post_url 2015-03-12-packing-comparisons %})
+
+#### List of All Posts
+  
+  {% for post in site.posts %}
+  * {{ post.date | date: "%b %-d, %Y" }}: [{{ post.title }}]({{ post.url | prepend: site.baseurl }}){% endfor %}
