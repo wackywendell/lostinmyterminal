@@ -57,8 +57,20 @@
 // Allows the use of rem-calc() or lower-bound() in your settings
 @import '../bower_components/foundation/scss/foundation/functions';
 
-$primary-color: #9b59b6;
-$topbar-bg-color: #8e44ad;
+// Colors taken from http://flatuicolors.com/
+$primary-color: #27ae60; //emerald
+$topbar-bg-color: #2ecc71; // nephritis
+$title-bg-color: #2ecc71;
+
+$primary-color: #8e44ad; // wisteria
+$topbar-bg-color: #9b59b6; // amethyst
+$title-bg-color: #8e44ad;
+
+// Colors taken from Semantic UI
+$primary-color: #009088;
+$topbar-bg-color: #00B5AD;
+$title-bg-color: #009088;
+
 
 
 // The default font-size is set to 100% of the browser style sheet (usually 16px)
