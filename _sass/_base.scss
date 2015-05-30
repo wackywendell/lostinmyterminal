@@ -25,6 +25,7 @@ code {
 pre {
     padding: 8px 12px;
     overflow-x: scroll;
+    margin-bottom: $spacing-unit / 2;
 
     > code {
         border: 0;
