@@ -34,7 +34,7 @@
 }
 
 #header .fa-stack {
-  font-size: $h1-font-size * 1.5;
+  font-size: $h1-font-size * 1.2;
 }
 
 // Our variables
@@ -78,7 +78,7 @@ $on-laptop:        800px;
 
 // Import partials from `sass_dir` (defaults to `_sass`)
 @import
-        "base",
-        "layout",
+        // "base",
+        // "layout",
         "syntax-highlighting"
 ;
