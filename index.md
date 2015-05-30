@@ -22,7 +22,7 @@ I am also an Open-Source enthusiast, and I maintain a few useful packages:
    ([repository](https://github.com/wackywendell/tess)): Calculate 3D Voronoi tesselations in Python
  - [Spack](http://spack.readthedocs.org/en/latest/)
    ([repository](https://github.com/wackywendell/spack)): Analyze packings of spheres
- - [ParM](http://parm.lostinmy.com/) ([repository](https://github.com/wackywendell/parm)): A
+ - [ParM](http://parm.lostinmyterminal.com/) ([repository](https://github.com/wackywendell/parm)): A
    feature-packed Molecular Dynamics simulation package, modularly built to support just about any
    MD simulation (2D or 3D). I have used it myself for jamming (packings of spheres), disordered
    protein simulations, and modeling bird nests. It is written in C++ and includes bindings for
@@ -50,6 +50,6 @@ Or if you're in the mood for an interesting algorithm:
   * [Using Sphinx for documentation]({% post_url 2015-03-12-packing-comparisons %})
 
 #### List of All Posts
-  
+
   {% for post in site.posts %}
   * {{ post.date | date: "%b %-d, %Y" }}: [{{ post.title }}]({{ post.url | prepend: site.baseurl }}){% endfor %}
