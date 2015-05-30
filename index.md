@@ -11,7 +11,7 @@ forget how to do or that even with a bit of searching take a while to compose a 
 blog exists to help me remember these in the future, and hopefully to help any others lost in their
 own terminals searching for similar answers.
 
-# About Me
+## About Me
 
 ## Posts
 

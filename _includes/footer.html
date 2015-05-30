@@ -1,15 +1,38 @@
 <footer class="footer">
   <div class="row">
-    <div>
-      <div class="large-4 medium-6 small-12 columns">
-        <ul class="vcard">
-          <li class="fn">Gaius Baltar</li>
-          <li class="street-address">123 Colonial Ave.</li>
-          <li class="locality">Caprica City</li>
-          <li><span class="state">Caprica</span>, <span class="zip">12345</span></li>
-          <li class="email"><a href="#">g.baltar@example.com</a></li>
-        </ul>
+    <hr/>
+
+    <div class="large-4 medium-6 small-12 columns">
+      <div class="row">
+        <h4 class="subheader">{{ site.title }} </h2>
       </div>
+      <div class="row">
+        {{ site.description }}
+      </div>
+    </div>
+
+    <div class="large-4 medium-6 small-12 right text-right columns">
+      <ul class="vcard">
+        <li class="fn">{{ site.author }}</li>
+        {% if site.github_username %}
+          <li>
+            <a href="https://github.com/{{ site.github_username }}">
+              <i class="fa fa-github-square"></i>
+              <span class="username">{{ site.github_username }}</span>
+            </a>
+          </li>
+          {% endif %}
+          {% if site.linkedin_username %}
+          <!-- TODO: Fix this -->
+            <li>
+              <a href="https://linkedin.com/{{ site.linkedin_username }}">
+                <i class="fa fa-linkedin-square"></i>
+                <span class="username">{{ site.linkedin_username }}</span>
+              </a>
+            </li>
+            {% endif %}
+        <li class="email"><a href="#">wendellwsmith@gmail.com</a></li>
+      </ul>
     </div>
   </div>
 </footer>
