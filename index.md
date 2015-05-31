@@ -47,7 +47,7 @@ There are a few posts I think are especially useful:
 
 Or if you're in the mood for an interesting algorithm:
 
-  * [Using Sphinx for documentation]({% post_url 2015-03-12-packing-comparisons %})
+  * [Packing Comparisons]({% post_url 2015-03-12-packing-comparisons %})
 
 #### List of All Posts
 
