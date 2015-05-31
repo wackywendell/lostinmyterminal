@@ -37,6 +37,9 @@ This site is statically generated using [Jekyll](http://jekyllrb.com/), using [F
 5](http://foundation.zurb.com/) for the frontend and hosted on [GitHub
 Pages](https://pages.github.com/).
 
+I also wrote a post on how I integrated
+[Jekyll and Foundation]({% post_url 2015-05-30-jekyll-and-foundation %}) for this site.
+
 ## Posts
 
 There are a few posts I think are especially useful:
