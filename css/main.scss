@@ -44,10 +44,8 @@ $on-laptop:        800px;
 #header h1, #header h2, #header h3, #header h4, #header h5, #header h6 {
     color: #ffffff;
     font-size: $h1-font-size * 2;
-    $center: true;
     @include media-query($on-palm) {
       font-size: $h1-font-size * 1.2;
-      $center: false;
     }
     font-weight: 200;
     background: $title-bg-color;
@@ -59,6 +57,10 @@ $on-laptop:        800px;
 
 #header .fa-stack {
   font-size: $h1-font-size * 1.2;
+  @include media-query($on-palm) {
+    // size is 1.2/2 times title font; on-palm, font is 1.2*h1, so we want size 1.2*1.2/2 = .72
+    font-size: $h1-font-size * .72;
+  }
 }
 
 // Our variables
