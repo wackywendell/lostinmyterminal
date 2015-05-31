@@ -2,16 +2,20 @@
   <div class="row">
     <hr/>
 
-    <div class="large-5 medium-6 small-12 columns">
+    <div class="large-6 medium-6 small-12 columns">
       <div class="row">
-        <h4 class="subheader">{{ site.title }} </h2>
+        <div class="small-12 columns">
+          <h4 class="subheader">{{ site.title }} </h2>
+        </div>
       </div>
       <div class="row">
-        {{ site.description }}
+        <div class="small-12 columns">
+          <p>{{ site.description }}</p>
+        </div>
       </div>
     </div>
 
-    <div class="large-5 medium-6 small-12 right text-right columns">
+    <div class="large-5 medium-6 small-12 medium-right medium-text-right columns">
       <ul class="vcard">
         <li class="fn">{{ site.author }}</li>
         {% if site.github_username %}
