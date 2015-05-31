@@ -10,6 +10,6 @@ task :predeploy do
   sh 'git reset'
 end
 
-task :deploy => [:predeploy] do
+task deploy: :predeploy do
   sh 'git push origin gh-pages:master'
 end
