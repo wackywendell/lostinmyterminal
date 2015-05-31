@@ -4,7 +4,7 @@ end
 
 task :predeploy do
   sh 'git checkout gh-pages'
-  sh 'git merge master'
+  sh 'git merge master -m "updating gh-pages from main"'
   sh 'git checkout master'
   sh 'git checkout gh-pages bower_components'
   sh 'git reset'
