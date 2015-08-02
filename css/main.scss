@@ -27,9 +27,12 @@ $on-laptop:        800px;
 
 #header {
     float: left;
-    padding: 60px 0;
+    padding: 10rem 0 20rem;
+    @include media-query($on-palm) {
+      padding: 4rem 0 8rem;
+    }
     width: 100%;
-    max-width: none;
+    //max-width: 1000px;
 }
 
 #header {
@@ -38,7 +41,10 @@ $on-laptop:        800px;
     margin-right: auto;
     margin-top: 0;
     margin-bottom: 0;
-    background-color: $title-bg-color;
+    // background-color: $title-bg-color;
+    background: url("../assets/6H.jpg");
+    background-size: cover;
+    box-shadow: inset 0px 0px 0 $row-width rgba(0,0,0,0.2);
 }
 
 #footer {
@@ -51,7 +57,7 @@ $on-laptop:        800px;
     @include media-query($on-palm) {
       font-size: $h1-font-size * 1.2;
     }
-    font-weight: 200;
+    font-weight: 300;
     background: $title-bg-color;
 }
 
