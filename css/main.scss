@@ -27,7 +27,10 @@ $on-laptop:        800px;
 
 #header {
     float: left;
-    padding: 60px 0;
+    padding: 12rem 0 18rem;
+    @include media-query($on-palm) {
+      padding: 4rem 0 8rem;
+    }
     width: 100%;
     max-width: none;
 }
@@ -38,20 +41,24 @@ $on-laptop:        800px;
     margin-right: auto;
     margin-top: 0;
     margin-bottom: 0;
-    background-color: $title-bg-color;
+    // background-color: $title-bg-color;
+    background: url("../assets/6H.jpg");
+    background-size: cover;
+    background-position: center;
+    box-shadow: inset 0px 0px 0 $row-width rgba(0,0,0,0.2);
 }
 
 #footer {
   margin-bottom: 20px;
 }
 
-#header h1, #header h2, #header h3, #header h4, #header h5, #header h6 {
+#header h1 {
     color: #ffffff;
     font-size: $h1-font-size * 2;
     @include media-query($on-palm) {
       font-size: $h1-font-size * 1.2;
     }
-    font-weight: 200;
+    font-weight: 300;
     background: $title-bg-color;
 }
 
@@ -64,6 +71,32 @@ $on-laptop:        800px;
   @include media-query($on-palm) {
     // size is 1.2/2 times title font; on-palm, font is 1.2*h1, so we want size 1.2*1.2/2 = .72
     font-size: $h1-font-size * .72;
+  }
+}
+
+.titlepage #content h1, .titlepage #content h2 {
+  margin-top: 4rem;
+}
+
+.titlepage #content h1 {
+  font-size: $h1-font-size * 1.5;
+  @include media-query($on-palm) {
+    font-size: $h1-font-size * 1.2;
+  }
+}
+
+.titlepage #content h2 {
+  font-size: $h2-font-size * 1.5;
+  @include media-query($on-palm) {
+    font-size: $h2-font-size * 1.2;
+  }
+}
+
+.titlepage #content h3 {
+  margin-top: 2rem;
+  font-size: $h3-font-size * 1.5;
+  @include media-query($on-palm) {
+    font-size: $h3-font-size * 1.2;
   }
 }
 
