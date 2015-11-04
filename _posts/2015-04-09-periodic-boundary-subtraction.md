@@ -83,3 +83,61 @@ Out of curiosity, I benchmarked these two functions:
 |`1000 x 3`        | 83.3 ms   |288.0 ms|
 
 Matlab clearly has the upper hand, by a factor of ~3.
+
+## Python Update
+
+We can also do a nice broadcasting method:
+
+{% highlight python %}
+def dists3(rs, L):
+    diffs = rs[..., np.newaxis] - rs.T[np.newaxis, ...]
+    diffs = np.rollaxis(diffs, -1, -2)
+    return np.remainder(diffs + L/2., L) - L/2.
+{% endhighlight %}
+
+Note that we had to add in a call to `np.rollaxis` here, which converts `diffs`
+from $N \times d \times N$ to $N \times N \times d$, and allows us to broadcast
+over the adding `L` in the case where `L` is not a scalar.
+
+We can also extend this to a pairwise function for comparing two different sets
+of particles:
+
+{% highlight python %}
+def pair_dists(rs1, rs2, L):
+    N,d = np.shape(rs)
+    diffs = rs1[..., np.newaxis] - rs2.T[np.newaxis, ...]
+    diffs = np.rollaxis(diffs, -1, -2)
+    return np.remainder(diffs + L/2., L) - L/2.
+{% endhighlight %}
+
+And if our two pairs of particles may have had a center-of-mass motion that we
+want to ignore, we can calculate
+
+$$
+d^{2} = \sum_i \left(\vec{r}_{i} \ominus_\vec{L} \vec{s}_{i} - \vec{\delta}\right)^2
+$$
+
+where $\ominus_\vec{L}$ means "shortest distance given periodic boundary
+conditions in a box of shape $\vec{L}$," and $\vec{\delta}$ is the center-of-mass
+motion. It turns out that this is equal to
+
+$$
+d^2 = \frac{1}{N}\sum_{\left\langle i,j\right\rangle }\left(\vec{r}_{ij} \ominus_\vec{L} \vec{s}_{ij}\right)^2
+$$
+
+The reason this math works (and the $\vec \delta$ drops out!) is talked about a
+bit more in [this post]({% post_url 2015-03-12-packing-comparisons %}). The Python function for this is as follows:
+
+{% highlight python %}
+def pair_dist(rs1, rs2, L):
+    """
+    Returns the total distance between pairs of points in rs1 and rs2, given a 
+    periodic box of size L. Ignores overall translation.
+    """
+    dists1 = (rs1[..., np.newaxis] - rs1.T[np.newaxis, ...])
+    dists2 = (rs2[..., np.newaxis] - rs2.T[np.newaxis, ...])
+    rij_minus_sij = np.rollaxis(dists1 - dists2, -1, -2)
+    rij_minus_sij = ((rij_minus_sij + L/2.) % L) - L/2.
+    dist_sqs = np.triu(np.sum(rij_minus_sij**2, axis=-1))
+    return np.sqrt(np.sum(dist_sqs) / len(rs1))
+{% endhighlight %}
