@@ -125,7 +125,7 @@ want to find not just the best pairing, but the best (pairing, translation) to m
 now want to find the *ordering tuple* $T$ and vector $\vec \delta$ that minimizes
 
 $$
-d^2 = \sum_{i=1}^N \left| \vec{r}_i - \vec{s}_{T_i} - \vec{delta} \right|
+d^2 = \sum_{i=1}^N \left| \vec{r}_i - \vec{s}_{T_i} - \vec{\delta} \right|
 $$
 
 It turns out, this is simple: you subtract off the "center of mass" difference:
