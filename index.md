@@ -44,6 +44,7 @@ I also wrote a post on how I integrated
 
 There are a few posts I think are especially useful:
 
+  * [Beautiful Plots in Python]({% post_url 2015-12-01-plotting %})
   * [BASH and `getopts`]({% post_url 2015-02-06-getopts %})
   * [Prepending and appending to your `$PATH`]({% post_url 2015-01-09-path-prepend %})
   * [Using Sphinx for documentation]({% post_url 2015-03-09-sphinx-documentation %})
