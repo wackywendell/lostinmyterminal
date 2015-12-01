@@ -14,3 +14,7 @@ task deploy: :predeploy do
   sh 'git push origin gh-pages:master'
   sh 'git push'
 end
+
+task :updatemuted do
+  sh 'git subtree --prefix=assets/mutedplots pull mutedplots master'
+end
