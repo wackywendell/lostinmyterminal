@@ -12,7 +12,7 @@ Making a random rotation matrix is somewhat hard. You can't just use "random ele
 My first thought was the following:
 
  1. Pick a random axis $$\hat u$$, by getting three Gaussian-distributed numbers, calling them `x`, `y`, and `z`, and then taking the norm of that vector.
- 2. Pick a random angle in the range $$0 \le \theta < 2 \pi $$.
+ 2. Pick a random angle in the range $$ 0 \le \theta < 2 \pi $$.
  3. Rotate your original vector $$\vec v$$ around $$\hat u$$ by $$\theta$$.
 
 That's accomplished with the following code:
@@ -42,11 +42,11 @@ def rotate(vec, axis, angle):
 rotated = rotate(v, axis, theta)
 {% endhighlight %}
 
-Unfortunately, **this does not give you a uniformly rotated vector*:* you end up where you started too often.
+Unfortunately, **this does not give you a uniformly rotated vector**: you end up where you started too often.
 
 ## Second attempt: *Uniform* Random Rotation Matrix
 
-If we want a *uniformly distriuted* rotation, that's a little trickier than the above. There's a [Wikipedia article section](en.wikipedia.org/wiki/Rotation_matrix#Uniform_random_rotation_matrices) on it, but its not too helpful.
+If we want a *uniformly distributed* rotation, that's a little trickier than the above. There's a [Wikipedia article section](en.wikipedia.org/wiki/Rotation_matrix#Uniform_random_rotation_matrices) on it, but its not too helpful.
 
 Instead, I found [some C code](http://www.realtimerendering.com/resources/GraphicsGems/gemsiii/rand_rotation.c) from a book called "Graphics Gems III".
 
