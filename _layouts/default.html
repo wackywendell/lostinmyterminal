@@ -10,7 +10,23 @@
     {{ content }}
 
     {% include footer.html %}
-
+  
+    <!-- <script>
+      renderMathInElement(
+          document,
+          {
+              delimiters: [
+                  {left: "$$", right: "$$", display: true},
+                  {left: "\\[", right: "\\]", display: true},
+                  {left: "$", right: "$", display: false},
+                  {left: "\\(", right: "\\)", display: false}
+              ]
+          }
+      );
+    </script> -->
+    
+    <script defer src="{{ site.baseurl }}/assets/katex_render.js"></script>
+  
   </body>
 
 </html>
