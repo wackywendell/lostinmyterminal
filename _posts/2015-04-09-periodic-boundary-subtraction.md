@@ -114,15 +114,15 @@ And if our two pairs of particles may have had a center-of-mass motion that we
 want to ignore, we can calculate
 
 $$
-d^{2} = \sum_i \left(\vec{r}_{i} \ominus_\vec{L} \vec{s}_{i} - \vec{\delta}\right)^2
+d^{2} = \sum_i \left(\vec{r}_{i} \ominus_{\vec{L}} \vec{s}_{i} - \vec{\delta}\right)^2
 $$
 
-where $$\ominus_\vec{L}$$ means "shortest distance given periodic boundary
+where $$\ominus_{\vec{L}}$$ means "shortest distance given periodic boundary
 conditions in a box of shape $$\vec{L}$$," and $$\vec{\delta}$$ is the center-of-mass
 motion. It turns out that this is equal to
 
 $$
-d^2 = \frac{1}{N}\sum_{\left\langle i,j\right\rangle }\left(\vec{r}_{ij} \ominus_\vec{L} \vec{s}_{ij}\right)^2
+d^2 = \frac{1}{N}\sum_{\left\langle i,j\right\rangle }\left(\vec{r}_{ij} \ominus_{\vec{L}} \vec{s}_{ij}\right)^2
 $$
 
 The reason this math works (and the $$\vec \delta$$ drops out!) is talked about a
