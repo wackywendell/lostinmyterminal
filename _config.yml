@@ -12,8 +12,7 @@ github_username:  wackywendell
 
 # Build settings
 markdown: kramdown
-# Use Pygments. Default for Github.
-highlighter: pygments
+highlighter: rouge
 exclude: ['bower_components']
 
 kramdown:
