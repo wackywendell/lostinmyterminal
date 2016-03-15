@@ -35,7 +35,7 @@ I have also contributed to many larger projects, including numpy, Rust, vapory, 
 
 This site is statically generated using [Jekyll](http://jekyllrb.com/), using [Foundation
 5](http://foundation.zurb.com/) for the frontend and hosted on [GitHub
-Pages](https://pages.github.com/). Title photo is from [Gratisography](http://gratisography.com).
+Pages](https://pages.github.com/). Ideas and inspiration came from Jason Long's [Cayman theme](http://jasonlong.github.io/cayman-theme/) and [uigradients.com](http://uigradients.com/).
 
 I also wrote a post on how I integrated
 [Jekyll and Foundation]({% post_url 2015-05-30-jekyll-and-foundation %}) for this site.
