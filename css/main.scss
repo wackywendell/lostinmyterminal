@@ -27,25 +27,25 @@ $on-laptop:        800px;
 
 #header {
     float: left;
-    padding: 12rem 0 18rem;
-    @include media-query($on-palm) {
-      padding: 4rem 0 8rem;
-    }
     width: 100%;
     max-width: none;
-}
-
-#header {
-    width: 100%;
+    padding: 5rem 0 5rem;
     margin-left: auto;
     margin-right: auto;
-    margin-top: 0;
-    margin-bottom: 0;
+    margin-top: 0rem;
+    margin-bottom: 6rem;
+    @include media-query($on-palm) {
+      padding: 2rem 0 2rem;
+      margin-bottom: 2rem;
+    }
     // 
-    background: url("../assets/road-compressed.jpg");
+    // background: url("../assets/road-compressed.jpg");
+    // Color from http://uigradients.com/#Mojito
+    background-color: #93F9B9;
+    background-image: linear-gradient(120deg, #1D976C, #93F9B9);
     background-size: cover;
     background-position: center;
-    box-shadow: inset 0px 0px 0 $row-width rgba(0,0,0,0.2);
+    // box-shadow: inset 0px 0px 0 $row-width rgba(0,0,0,0.2);
 }
 
 #footer {
@@ -54,7 +54,7 @@ $on-laptop:        800px;
 
 #header h1 {
     color: #ffffff;
-    font-size: $h1-font-size * 2;
+    font-size: $h1-font-size * 1.6;
     @include media-query($on-palm) {
       font-size: $h1-font-size * 1.2;
     }
@@ -67,41 +67,15 @@ $on-laptop:        800px;
 }
 
 #header .fa-stack {
-  font-size: $h1-font-size * 1.2;
+  font-size: $h1-font-size * 1.6;
   @include media-query($on-palm) {
     // size is 1.2/2 times title font; on-palm, font is 1.2*h1, so we want size 1.2*1.2/2 = .72
     font-size: $h1-font-size * .72;
   }
 }
 
-.titlepage #content h1, .titlepage #content h2 {
-  margin-top: 4rem;
-}
-
-.titlepage #content h1 {
-  font-size: $h1-font-size * 1.5;
-  @include media-query($on-palm) {
-    font-size: $h1-font-size * 1.2;
-  }
-}
-
-.titlepage #content h2 {
-  font-size: $h2-font-size * 1.5;
-  @include media-query($on-palm) {
-    font-size: $h2-font-size * 1.2;
-  }
-}
-
-.titlepage #content h3 {
-  margin-top: 2rem;
-  font-size: $h3-font-size * 1.5;
-  @include media-query($on-palm) {
-    font-size: $h3-font-size * 1.2;
-  }
-}
-
 // Our variables
-$base-font-family: Helvetica, Arial, sans-serif;
+$base-font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
 $base-font-size:   16px;
 $small-font-size:  $base-font-size * 0.875;
 $base-line-height: 1.5;
