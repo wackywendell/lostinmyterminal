@@ -1,19 +1,12 @@
 ---
 layout: title
-title: Welcome
+title: About
 permalink: /
 ---
 
-# Welcome
-
-Like many in the software community, I routinely come across simple things that I either frequently
-forget how to do or that even with a bit of searching take a while to compose a full answer. This
-blog exists to help me remember these in the future, and hopefully to help any others lost in their
-own terminals searching for similar answers.
-
 ## About Me
 
-I am a software engineer in Cambridge, MA (next to Boston), currently working at [datadog](https://datadoghq.com/). I work primarily on the metrics query system, a distributed system for aggregating large amounts of data at high volume and low latency.
+I am a software engineer in Cambridge, MA (next to Boston), currently working at [Datadog](https://datadoghq.com/). I work primarily on the metrics query system, a distributed system for aggregating large amounts of data at high volume and low latency.
 
 Before that, I was a computational physicist at Yale University, studying a range of systems in the fields of biophysics and granular materials via computational models.
 
@@ -32,7 +25,7 @@ I am also an Open-Source enthusiast, and I maintain a few useful packages:
 
 I have also contributed to many larger projects, including numpy, Rust, vapory, and others.
 
-### About this Site
+## About this Site
 
 This site is statically generated using [Jekyll](http://jekyllrb.com/), using [Foundation
 5](http://foundation.zurb.com/) for the frontend and hosted on [GitHub
@@ -54,7 +47,7 @@ Or if you're in the mood for an interesting algorithm:
 
 - [Packing Comparisons]({% post_url 2015-03-12-packing-comparisons %})
 
-#### List of All Posts
+### List of All Posts
 
 {% for post in site.posts %}
 
