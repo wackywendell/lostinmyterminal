@@ -24,6 +24,6 @@ jekyll serve
 To publish, simply push to the `published` branch:
 
 ```sh
-$ git push origin master:master  # Just to make sure remote master is up to date too
-$ git push origin master:published  # To publish
+git push origin master:master  # Just to make sure remote master is up to date too
+git push origin master:published  # To publish
 ```
